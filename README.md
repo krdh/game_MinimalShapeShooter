@@ -26,3 +26,5 @@ Todo:
 - add effect when player gets hit
 - finisch patrol.tscn
 - ... juice and pollish ...
+
+![screenshot](https://github.com/krdh/game_MinimalShapeShooter/blob/master/img/Screenshot%20from%202020-11-19%2019-24-48.png)
