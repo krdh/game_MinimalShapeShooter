@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Arena.gd" type="Script" id=2]
+[ext_resource path="res://Font.ttf" type="DynamicFontData" id=5]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+glow_enabled = true
+glow_intensity = 0.47
+glow_strength = 1.17
+glow_bloom = 0.26
+glow_blend_mode = 0
+glow_bicubic_upscale = true
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+outline_color = Color( 1, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Arena" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 690.744, 350.125 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="Timer_spawnEnemy" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 11.2246
+margin_top = 4.48984
+margin_right = 283.225
+margin_bottom = 39.4898
+custom_fonts/font = SubResource( 2 )
+text = "test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer_spawnEnemy" to="." method="_on_Timer_spawnEnemy_timeout"]

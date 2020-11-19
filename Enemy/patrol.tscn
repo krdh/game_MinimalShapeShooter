@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Enemy/Path2D.gd" type="Script" id=1]
+[ext_resource path="res://img/Circle.png" type="Texture" id=2]
+
+
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -317.657, 178.471, 317.657, -178.471, 250.962, 163.222, -153.777, -19.0819, 153.777, 19.0819, 730.484, 192.406, 285.105, -208.778, -285.105, 208.778, 1105.16, 261.998, -87.552, -173.982, 87.552, 173.982, 1091.69, 616.696, 0, 0, 0, 0, 667.248, 673.973, -116.736, 132.451, 116.736, -132.451, 318.309, 614.451, 102.144, 110.001, -102.144, -110.001, 349.738, 388.836, 0, 66.2253, 0, -66.2253, 146.573, 272.1, 0, 0, 0, 0, 250.962, 163.222 )
+}
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 60.6232
+
+[node name="patrol" type="Node"]
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2( -144.83, -76.6909 )
+scale = Vector2( 1.18401, 1.10499 )
+curve = SubResource( 1 )
+script = ExtResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2( 250.962, 163.222 )
+rotation = -0.510113
+loop = false
+
+[node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D"]
+modulate = Color( 0.301961, 0.956863, 0.00392157, 1 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D/Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Sprite/Area2D"]
+shape = SubResource( 2 )
