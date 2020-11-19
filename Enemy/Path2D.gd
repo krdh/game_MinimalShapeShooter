@@ -1,16 +1,18 @@
 extends Path2D
 
+# Under Development,  not used in game yet  !!!!
+
 onready var flying = get_node("PathFollow2D")
-var mytween
 
 func _ready():
 	set_process(true)
-	mytween = Tween.new()
-	add_child(mytween)
+	
+	var mytween = Tween.new()
+	self.add_child(mytween)
 	mytween.interpolate_property(flying, "unit_offset", 0,1,20, mytween.TRANS_LINEAR, mytween.EASE_IN_OUT)
 	mytween.set_repeat(true)
 	mytween.start()
-	
+
 func _process(delta):
 	pass
 	#flying.set_offset(flying.get_offset() + 350 * delta)
@@ -21,3 +23,4 @@ func _process(delta):
 
 
 # https://www.youtube.com/watch?v=_lJ0jbahbjw
+#==============================================================================

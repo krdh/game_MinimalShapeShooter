@@ -36,7 +36,7 @@ margin_top = 4.48984
 margin_right = 283.225
 margin_bottom = 39.4898
 custom_fonts/font = SubResource( 2 )
-text = "test"
+text = "use keyboard up,down,left,right  and mouse ."
 __meta__ = {
 "_edit_use_anchors_": false
 }

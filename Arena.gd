@@ -57,7 +57,7 @@ func spawn_location() -> Vector2:
 	return (loc)
 
 #------------------------------------------------------------------------------
-# draw a line from the player to help aim.
+# draw a line from the player to help with aim.
 func _draw():
 	var linefrom = $Player.global_position
 	var lineto   = get_global_mouse_position()

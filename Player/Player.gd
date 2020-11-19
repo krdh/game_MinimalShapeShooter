@@ -10,9 +10,9 @@ var can_shoot = true
 func _ready():
 	Global.node_player = self
 	Global.g_player_hp = 1000
+
 func _exit_tree():
 	Global.node_player = null
-#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 func _process(delta):
@@ -45,10 +45,10 @@ func _process(delta):
 # limits the shooting rate
 func _on_Reloadspeed_timeout():
 	can_shoot = true
-	
+
+# when enemy hits player, health point goes down.
 func _on_Area2D_area_entered(area):
 	if area.is_in_group("Player_damager"):
 		Global.g_player_hp -=1
 	
-
-
+#==============================================================================
